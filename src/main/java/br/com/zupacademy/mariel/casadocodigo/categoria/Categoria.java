@@ -1,4 +1,4 @@
-package br.com.zupacademy.mariel.casadocodigo.categoria.entities;
+package br.com.zupacademy.mariel.casadocodigo.categoria;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

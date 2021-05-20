@@ -1,4 +1,4 @@
-package br.com.zupacademy.mariel.casadocodigo.autor.entities;
+package br.com.zupacademy.mariel.casadocodigo.autor;
 
 import java.time.LocalDateTime;
 
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import br.com.zupacademy.mariel.casadocodigo.autor.validations.email.EmailUnico;
+import br.com.zupacademy.mariel.casadocodigo.common.validators.Unique;
 
 @Entity
 public class Autor {
@@ -30,7 +30,7 @@ public class Autor {
 	@NotNull
 	@NotEmpty
 	@Column(nullable = false, unique = true)
-	@EmailUnico
+	@Unique(entity = Autor.class, attribute = "email")
 	private String email;
 
 	@Size(max = 400)

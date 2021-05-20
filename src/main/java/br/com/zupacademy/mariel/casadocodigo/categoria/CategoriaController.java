@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zupacademy.mariel.casadocodigo.categoria.dtos.CategoriaDto;
-
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
@@ -18,7 +16,7 @@ public class CategoriaController {
 	private CategoriaRepository categoriaRepository;
 	
 	@PostMapping
-	public void criarCategoria(@RequestBody @Valid CategoriaDto categoriaDto) {
+	public void criarCategoria(@RequestBody @Valid CategoriaRequestDto categoriaDto) {
 		categoriaRepository.save(categoriaDto.toEntity());
 	}
 

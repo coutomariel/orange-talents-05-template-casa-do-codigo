@@ -1,11 +1,10 @@
-package br.com.zupacademy.mariel.casadocodigo.autor.dtos;
+package br.com.zupacademy.mariel.casadocodigo.autor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import br.com.zupacademy.mariel.casadocodigo.autor.entities.Autor;
 import br.com.zupacademy.mariel.casadocodigo.common.validators.Unique;
 
 public class AutorRequestDto {

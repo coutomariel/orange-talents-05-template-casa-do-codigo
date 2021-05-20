@@ -12,13 +12,17 @@ import javax.validation.Payload;
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = ValorUnicoValidator.class)
 public @interface Unique {
-	
+
 	String message() default "Atributo permite apenas valores únicos";
+
 	Class<?>[] groups() default {};
+
 	Class<? extends Payload>[] payload() default {};
 
 	String value() default "";
+
 	Class<?> entity();
+
 	String attribute();
 
 }

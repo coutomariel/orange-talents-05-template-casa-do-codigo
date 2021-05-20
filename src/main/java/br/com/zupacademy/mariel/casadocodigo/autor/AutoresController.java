@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.zupacademy.mariel.casadocodigo.autor.dtos.AutorRequestDto;
-
 @RestController
 @RequestMapping("/autores")
 public class AutoresController {

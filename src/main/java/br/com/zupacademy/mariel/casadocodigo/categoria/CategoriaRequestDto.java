@@ -1,11 +1,10 @@
-package br.com.zupacademy.mariel.casadocodigo.categoria.dtos;
+package br.com.zupacademy.mariel.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
-import br.com.zupacademy.mariel.casadocodigo.categoria.entities.Categoria;
 import br.com.zupacademy.mariel.casadocodigo.common.validators.Unique;
 
-public class CategoriaDto {
+public class CategoriaRequestDto {
 
 	@NotBlank
 	@Unique(entity = Categoria.class, attribute = "nome")
