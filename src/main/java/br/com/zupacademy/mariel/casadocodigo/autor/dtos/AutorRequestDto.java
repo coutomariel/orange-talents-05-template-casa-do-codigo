@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import br.com.zupacademy.mariel.casadocodigo.autor.entities.Autor;
-import br.com.zupacademy.mariel.casadocodigo.autor.validations.email.EmailUnico;
+import br.com.zupacademy.mariel.casadocodigo.common.validators.Unique;
 
 public class AutorRequestDto {
 
@@ -17,7 +17,7 @@ public class AutorRequestDto {
 	@Email
 	@NotNull
 	@NotEmpty
-	@EmailUnico
+	@Unique(entity = Autor.class, attribute = "email")
 	private String email;
 
 	@Size(max = 400)
