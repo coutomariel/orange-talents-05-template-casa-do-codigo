@@ -12,6 +12,8 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import br.com.zupacademy.mariel.casadocodigo.autor.validations.email.EmailUnico;
+
 @Entity
 public class Autor {
 
@@ -28,6 +30,7 @@ public class Autor {
 	@NotNull
 	@NotEmpty
 	@Column(nullable = false, unique = true)
+	@EmailUnico
 	private String email;
 
 	@Size(max = 400)
@@ -40,11 +43,17 @@ public class Autor {
 	@NotNull
 	private LocalDateTime dataCriacao = LocalDateTime.now();
 
-	
+	/**
+	 * @deprecated contrutor usado apenas pelo hibernate
+	 */
+	@Deprecated
+	public Autor() {
+	}
+
 	public Autor(String nome, String email, String descricao) {
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;
 	}
-	
+
 }
