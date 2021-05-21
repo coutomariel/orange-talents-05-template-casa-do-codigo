@@ -87,4 +87,12 @@ public class Livro {
 		this.categoria = categoria;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+	
 }

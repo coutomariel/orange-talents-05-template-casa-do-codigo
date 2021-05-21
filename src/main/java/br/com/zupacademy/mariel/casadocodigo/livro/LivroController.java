@@ -1,8 +1,12 @@
 package br.com.zupacademy.mariel.casadocodigo.livro;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +30,13 @@ public class LivroController {
 	public void criarlivro(@RequestBody @Valid LivroRequestDto dto) {
 		Livro livro = dto.toEntity(autoresRepository, categoriasRepository);
 		livroRepository.save(livro);
+	}
+	
+	@GetMapping
+	public List<LivroResponseDto> listarLivros(){
+		return livroRepository.findAll()
+				.stream().map((livro) -> new LivroResponseDto(livro))
+				.collect(Collectors.toList());
 	}
 
 }
