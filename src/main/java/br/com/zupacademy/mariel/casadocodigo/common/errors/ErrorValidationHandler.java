@@ -22,7 +22,11 @@ public class ErrorValidationHandler {
 		ErrorsResponseDto errorsResponseDto = new ErrorsResponseDto();
 		exception.getFieldErrors().stream().forEach(error -> {
 			String message = messageSource.getMessage(error, LocaleContextHolder.getLocale());
-			errorsResponseDto.getErrors().add(new ErrorValidation(error.getField(), message));
+			errorsResponseDto.getErrors().add(new ErrorFieldValidation(error.getField(), message));
+		});
+		exception.getGlobalErrors().forEach(error -> {
+			String message = messageSource.getMessage(error, LocaleContextHolder.getLocale());
+			errorsResponseDto.getErrors().add(new ErrorObjectValidation(error.getObjectName(), message));
 		});
 
 		return errorsResponseDto;
