@@ -25,6 +25,14 @@ public class Estado {
 	@NotNull
 	@ManyToOne
 	private Pais pais;
+	
+	
+	
+	public Estado() {
+		super();
+	}
+
+
 
 	public Estado(@NotNull @NotBlank String nome, @NotNull Pais pais) {
 		this.nome = nome;

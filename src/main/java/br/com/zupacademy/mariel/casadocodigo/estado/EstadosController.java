@@ -17,15 +17,14 @@ public class EstadosController {
 
 	@Autowired
 	private EstadosRepository estadosRepository;
-
+	
 	@Autowired
 	private PaisesRepository paisesRepository;
-
+	
 	@PostMapping
 	@Transactional
 	public void criarEstado(@RequestBody @Valid EstadoRequestDto estadoRequestDto) {
-		Estado estado = estadoRequestDto.toEntity(paisesRepository);
-		estadosRepository.save(estado);
+		estadosRepository.save(estadoRequestDto.toEntity(paisesRepository));
+		
 	}
-
 }
