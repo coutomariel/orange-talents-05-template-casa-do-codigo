@@ -6,7 +6,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class Pais {
@@ -15,11 +14,10 @@ public class Pais {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull
 	@NotBlank
 	@Column(nullable = false, unique = true)
 	private String nome;
-	
+
 	/**
 	 * @deprecated para uso exclusivo do hibernate
 	 */
@@ -30,5 +28,11 @@ public class Pais {
 	public Pais(@NotBlank String nome) {
 		this.nome = nome;
 	}
+
+	public String getNome() {
+		return nome;
+	}
+	
+	
 
 }

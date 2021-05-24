@@ -12,15 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/paises")
 public class PaisesController {
-	
+
 	@Autowired
 	private PaisesRepository paisesRepository;
-	
+
 	@PostMapping
 	@Transactional
 	public void criarPais(@RequestBody @Valid PaisRequestDto paisRequestDto) {
-		System.out.println(paisRequestDto);
 		paisesRepository.save(paisRequestDto.toEntity());
 	}
-
+	
 }
