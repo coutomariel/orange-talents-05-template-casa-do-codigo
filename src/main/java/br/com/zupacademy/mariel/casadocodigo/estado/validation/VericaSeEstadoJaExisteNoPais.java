@@ -22,7 +22,6 @@ public class VericaSeEstadoJaExisteNoPais implements ConstraintValidator<UniqueI
 
 	@Override
 	public boolean isValid(EstadoRequestDto estadoRequestDto, ConstraintValidatorContext context) {
-		System.out.println(estadoRequestDto.getPais());
 
 		if (!(estadoRequestDto instanceof EstadoRequestDto)) {
 			throw new IllegalArgumentException("@UniqueInYourCountry deve ser usado apenas para classe Estado");
